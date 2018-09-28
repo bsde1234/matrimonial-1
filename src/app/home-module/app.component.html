@@ -1,0 +1,59 @@
+<!-- 
+<div class="container">
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <img src="assets/image/1.jpeg" alt="Random first slide">
+      <div class="centered">
+        <h3>10 seconds between slides...</h3>
+        <h3>This carousel uses customized default values.</h3>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="assets/image/2.jpeg"  alt="Random second slide">
+      <div class="centered">
+        <h3>No keyboard...</h3>
+        <p>This carousel uses customized default values.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="assets/image/3.jpeg" alt="Random third slide">
+      <div class="centered">
+        <h3>And no wrap after last slide.</h3>
+        <p>This carousel uses customized default values.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="assets/image/4.jpeg" alt="Random third slide">
+      <div class="centered">
+        <h3>And no wrap after last slide.</h3>
+        <p>This carousel uses customized default values.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+<router-outlet></router-outlet> -->
+
+<div id="hero">
+    <div id="hero-up"></div>
+    <div class="container">
+        <h1>Hero Form</h1> 
+        <input type="text"/>
+         <div class="card-group">
+             <div class="row">    
+              <div *ngFor="let user of user_details" class="col-lg-3 col-md-4"  >
+                <div class="card">
+                      <img class="card-img-left mw-100 mh-100" src={{user.url}}  alt="Card image cap" >
+                      <div class="card-body">
+                        <h5 class="card-title">{{user.name}}</h5>
+                        <p class="card-text">{{user.age}}</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                      <a [routerLink]="['/details',user.id]">MoreInfo</a>
+              </div>
+            </div>
+          </div>
+          
+         </div>   
+    </div>
+</div>
+<router-outlet></router-outlet>

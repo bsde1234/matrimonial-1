@@ -1,0 +1,45 @@
+<div id="hero">
+  <div id="hero-up"></div>
+  <div class="container">
+<div [hidden]="submitted" id="hero1">
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm" ><!--style="margin-top:4cm;width:35%"> -->
+    <div class="form-group">
+      <h2 style="text-align:center">Login</h2>
+      <label for="email">Email Address</label>
+      <input type="email" class="form-control" id="email"
+               required ngModel email
+               [(ngModel)]="email" name="email"
+               #emailControl="ngModel" aria-describedby="emailHelp">
+        <div *ngIf="emailControl.invalid && (emailControl.dirty || emailControl.touched)" class="alert alert-danger">
+            <div *ngIf="emailControl.errors.required">
+                Email is required.
+            </div>
+            <div *ngIf="emailControl.errors.email">
+                  Enter a valid Email.
+            </div>
+        </div>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password"
+                 required minlength="8" maxlength="15"
+                 [(ngModel)]="password" name="password"
+                 #pwdControl="ngModel">
+         
+          <div *ngIf="pwdControl.invalid && (pwdControl.dirty || pwdControl.touched)" class="alert alert-danger">
+                  <div *ngIf="pwdControl.errors.required">
+                      Password is required.
+                  </div>
+                  <div *ngIf="pwdControl.errors.minlength || pwdControl.errors.maxlength">
+                      length of Password should be 8 to 15.
+                  </div>
+          </div>
+      </div>
+      
+      <button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Submit</button>
+  </form>
+  </div>
+</div>
+</div>

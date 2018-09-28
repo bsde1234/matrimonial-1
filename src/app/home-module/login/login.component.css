@@ -1,0 +1,30 @@
+form{margin-left:auto;margin-right:auto;}
+.container{
+    /* background-image:url("../../../assets/images/4.jpeg");  */
+    position: relative;
+    color:white;
+}
+#hero{
+    background-image: url("../../../assets/images/3.jpeg");
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    top:0%;
+    bottom: 0%;
+    height: 100vh;
+    /* z-index: -1; */
+}
+#hero1{
+    padding: 4cm;
+    /* width: 35%; */
+}
+/* input[type=text]{min-width: 500px;} */
+#hero-up{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top:0%;
+    bottom: 0%;
+    height: 100%;
+    width:100%;
+    /* z-index: 0;  */
+}
